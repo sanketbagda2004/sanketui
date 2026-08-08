@@ -440,16 +440,17 @@ h1,h2,h3,h4{
 
 .project-visual{
   position:relative;
-  height: 340px;
   border-radius: var(--radius-md);
   border: 1px solid var(--border);
   background: linear-gradient(150deg, #1c1c1f, #0d0d0e);
   overflow:hidden;
+  max-height: 420px;
   display:flex; align-items:center; justify-content:center;
 }
 .project-image {
     width: 100%;
-    height: 100%;
+    height: auto;
+    max-height: 420px;
     object-fit: cover;
     object-position: center;
     display: block;
@@ -459,7 +460,8 @@ h1,h2,h3,h4{
   .project-card, .project-card:nth-child(even){ grid-template-columns: 1fr; }
   .project-card:nth-child(even) .project-info,
   .project-card:nth-child(even) .project-visual{ order: initial; }
-  .project-visual{ height: 260px; }
+  .project-visual{ max-height: 300px; }
+  .project-image{ max-height: 300px; }
 }
 
 /* ============================================================
@@ -583,7 +585,7 @@ h1,h2,h3,h4{
   position:relative;
   border-radius: var(--radius-lg);
   border: 1px solid var(--border);
-  aspect-ratio: 4/5;
+  max-height: 640px;
   background:
     linear-gradient(160deg, rgba(124,58,237,0.16), rgba(255,255,255,0.02)),
     repeating-linear-gradient(135deg, rgba(255,255,255,0.025) 0px, rgba(255,255,255,0.025) 1px, transparent 1px, transparent 14px);
@@ -594,16 +596,15 @@ h1,h2,h3,h4{
   position:absolute; top: var(--s3); left: var(--s3);
 }
 .about-portrait .initials {
-    position: absolute;
-    inset: 0;
-    overflow: hidden;
+    position: relative;
+    width: 100%;
 }
 .about-portrait .initials img {
-  
     width: 100%;
-    height: 100%;
+    height: auto;
+    max-height: 640px;
     object-fit: cover;
-    object-position: center 30%;
+    object-position: center top;
     display: block;
 }
 .about-caption{
