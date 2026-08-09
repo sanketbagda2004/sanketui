@@ -876,3 +876,46 @@ h1,h2,h3,h4{
 }
 .cs-next-label{ font-size:12px; text-transform:uppercase; letter-spacing:.08em; color: var(--text-tertiary); margin-bottom:6px; }
 .cs-next h3{ font-size: clamp(22px,3vw,32px); }
+
+/* ============ FOOTER SOCIAL ICONS ============ */
+.footer-socials{
+  display: flex;
+  gap: 12px;
+  margin-top: var(--s4, 16px);
+}
+.social-fab{
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+  transition: transform .25s ease, box-shadow .25s ease;
+  flex-shrink: 0;
+}
+.social-fab svg{ width: 21px; height: 21px; }
+.social-fab:hover{
+  transform: translateY(-3px) scale(1.06);
+}
+.social-fab.wa{
+  background: linear-gradient(160deg, #29d366, #1fa855);
+  box-shadow: 0 6px 18px rgba(41,211,102,0.3);
+}
+.social-fab.wa:hover{ box-shadow: 0 8px 22px rgba(41,211,102,0.5); }
+.social-fab.ig{
+  background: radial-gradient(circle at 30% 110%, #ffd776 0%, #ff7a3d 25%, #e0336b 50%, #c72e9b 70%, #7c3aed 100%);
+  box-shadow: 0 6px 18px rgba(199,46,155,0.3);
+}
+.social-fab.ig:hover{ box-shadow: 0 8px 22px rgba(199,46,155,0.5); }
+.social-fab.gmail{
+  background: linear-gradient(160deg, #ea4335, #c5221f);
+  box-shadow: 0 6px 18px rgba(234,67,53,0.3);
+}
+.social-fab.gmail:hover{ box-shadow: 0 8px 22px rgba(234,67,53,0.5); }
+.social-fab.li{
+  background: linear-gradient(160deg, #0a66c2, #084b8f);
+  box-shadow: 0 6px 18px rgba(10,102,194,0.3);
+}
+.social-fab.li:hover{ box-shadow: 0 8px 22px rgba(10,102,194,0.5); }
