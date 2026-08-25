@@ -3,510 +3,230 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sanket Bagda — UI/UX Designer and Graphic Designer</title>
-<meta name="description" content="Sanket Bagda — UI/UX Designer specializing in modern digital experiences and AI-assisted design workflows.">
-<!-- <link rel="stylesheet" href="style.css"> -->
- <link rel="stylesheet" href="./style.css">
- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9948332833987555"
-     crossorigin="anonymous"></script>
+<title>Sanket Bagda — UI/UX & Graphic Designer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,600&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<div class="cursor-glow"></div>
+<!-- CUSTOM CURSOR DOT -->
+<div class="cursor-dot" id="cursorDot"></div>
 
-<!-- ============ NAVBAR ============ -->
-<header class="navbar">
-  <div class="container nav-inner">
-    <a href="#top" class="nav-logo">SANKET BAGDA</a>
-    <nav class="nav-links">
+<!-- ============ HEADER ============ -->
+<header class="site-header" id="siteHeader">
+  <div class="wrap header-inner">
+    <a href="#top" class="logo">
+      <span class="logo-badge">S</span>
+      <span class="logo-text">-SANKET</span>
+    </a>
+
+    <nav class="main-nav" id="mainNav">
       <a href="#work">Work</a>
-      <a href="#about">About</a>
       <a href="#skills">Skills</a>
       <a href="#process">Process</a>
+      <a href="#about">About</a>
       <a href="#contact">Contact</a>
     </nav>
-    <a href="#contact" class="btn btn-ghost nav-cta magnetic">Let's Talk <span class="btn-arrow">↗</span></a>
-    <button class="nav-toggle" aria-label="Open menu">
-      <!-- <span></span><span></span><span></span> -->
+
+    <a href="#contact" class="btn btn-coral btn-small header-cta">Let's Talk</a>
+
+    <button class="burger" id="burgerBtn" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
     </button>
   </div>
-</header>
 
-<div class="mobile-menu">
-  <a href="#work">Work</a>
-  <a href="#about">About</a>
-  <a href="#skills">Skills</a>
-  <a href="#process">Process</a>
-  <a href="#contact">Contact</a>
-  <a href="#contact" class="btn btn-primary">Let's Talk ↗</a>
-</div>
+  <!-- mobile nav -->
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#work">Work</a>
+    <a href="#skills">Skills</a>
+    <a href="#process">Process</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+    <a href="#contact" class="btn btn-coral btn-small">Let's Talk</a>
+  </div>
+</header>
 
 <main id="top">
 
   <!-- ============ HERO ============ -->
   <section class="hero">
-    <div class="hero-glow"></div>
-    <div class="container hero-grid">
+    <div class="wrap hero-wrap">
 
-      <div class="wire-scene reveal reveal-delay-1">
-        <svg class="wire-svg" id="icoWire" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Rotating wireframe icosahedron">
-          <g id="icoEdges"></g>
-          <g id="icoVerts"></g>
-        </svg>
+      <div class="hero-heading reveal-up">
+        <div class="hero-line hero-line--name">
+          <span>SANKET BAGDA</span>
+        </div>
+        <div class="hero-line hero-line--role">
+          <span>UI/UX &amp;<br>GRAPHIC DESIGNER</span>
+        </div>
       </div>
 
-      <div>
-        <div class="eyebrow hero-label reveal">UI/UX DESIGNER · Graphic Designer</div>
-        <div class="hero-rule reveal"></div>
-        <h1 class="reveal reveal-delay-1">Sanket Bagda</h1>
-        <p class="hero-sub reveal reveal-delay-2">UI/UX Designer crafting digital experiences that feel simple, intuitive &amp; memorable — with Figma, AI tools and modern design workflows.</p>
-        <div class="hero-actions reveal reveal-delay-3">
-          <a href="#work" class="btn btn-primary magnetic">View Work <span class="btn-arrow">↗</span></a>
-          <a href="#contact" class="hero-text-link">Contact</a>
+      <div class="hero-shapes" aria-hidden="true">
+        <div class="shape shape-circle float-anim"></div>
+        <div class="shape shape-diamond spin-anim"></div>
+        <div class="shape shape-star spin-anim-rev"></div>
+      </div>
+
+      <div class="hero-card reveal-up" style="--delay:.15s">
+        <div class="hero-card-accent"></div>
+        <p>UI/UX Designer crafting digital experiences that feel simple, intuitive &amp; memorable — with Figma, AI tools and modern design workflows.</p>
+        <div class="hero-card-actions">
+          <a href="#work" class="btn btn-coral">See Work</a>
+          <a href="#contact" class="btn btn-outline">&rarr; Let's Talk</a>
+        </div>
+        <div class="hero-card-badge" aria-hidden="true">★</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ STATS BAR ============ -->
+  <section class="stats-bar" id="skills">
+    <div class="wrap stats-grid">
+      <div class="stat-item reveal-up">
+        <span class="stat-eyebrow">Projects</span>
+        <span class="stat-value">6+</span>
+        <span class="stat-rule"></span>
+      </div>
+      <div class="stat-item reveal-up" style="--delay:.08s">
+        <span class="stat-eyebrow">Tool</span>
+        <span class="stat-value">figma</span>
+        <span class="stat-rule"></span>
+      </div>
+      <div class="stat-item reveal-up" style="--delay:.16s">
+        <span class="stat-eyebrow">Focus</span>
+        <span class="stat-value">Ui Design</span>
+        <span class="stat-rule"></span>
+      </div>
+      <div class="stat-item reveal-up" style="--delay:.24s">
+        <span class="stat-eyebrow">Craft</span>
+        <span class="stat-value">Graphics</span>
+        <span class="stat-rule"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ME ============ -->
+  <section class="about" id="about">
+    <div class="about-watermark" aria-hidden="true">DETAIL</div>
+    <div class="wrap about-wrap reveal-up">
+      <div class="about-card">
+        <div class="about-text">
+          <span class="pill pill-dark">#ME</span>
+          <h2>SANKET BAGDA</h2>
+          <p>I'm Sanket Bagda, a UI/UX Designer who enjoys turning complex ideas into simple and engaging digital experiences. I combine design thinking, visual design and AI-powered tools to explore ideas faster and create better products.</p>
+          <p>I have completed my UI/UX and Graphic Course in Arena Animation and also 3 month internship at Qrolic Technology.</p>
+        </div>
+        <div class="about-photo">
+          <div class="about-photo-frame">
+            <img src="profile.jpg" alt="Portrait of Sanket Bagda">
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ ABOUT ============ -->
-  <section class="section" id="about">
-    <div class="container about-grid">
-      <div class="about-portrait reveal">
-        <div class="initials">
-          <img src="./pics/pic.jpeg" alt="">
-        </div>
-        <!-- <div class="about-caption">Sanket Bagda — Ahmedabad, India</div> -->
-      </div>
-      <div class="about-text reveal reveal-delay-1">
-        <div class="eyebrow" style="margin-bottom: var(--s3);">About</div>
-        <h2 style="font-size: clamp(28px,3.6vw,44px); margin-bottom: var(--s5);">A little about me.</h2>
-        <p>I'm Sanket Bagda, a UI/UX Designer who enjoys turning complex ideas into simple and engaging digital experiences. I combine design thinking, visual design and AI-powered tools to explore ideas faster and create better products.</p>
-        <div class="about-stats">
-          <div class="stat-card">4+ Projects</div>
-          <div class="stat-card">Figma</div>
-          <div class="stat-card">AI Workflow</div>
-          <div class="stat-card">UI/UX Design</div>
-        </div>
-      </div>
-    </div>
-  </section>  
-
-  <!-- ============ SELECTED WORK ============ -->
-  <section class="section" id="work">
-    <div class="container">
-      <div class="section-head reveal">
-        <h2>Selected Work</h2>
-        <p class="sub">A collection of products, interfaces and experiences I've designed.</p>
-      </div>
-      <div class="work-grid">
-
-  <!-- PROJECT 01 -->
-  <a
-    href="https://www.figma.com/proto/crgIRsoa30CVGBraGbBP9H/Sharp-Cameo?node-id=39-5&t=IkCeEfNKarZcGnmj-1&scaling=min-zoom&content-scaling=fixed&page-id=39%3A4&starting-point-node-id=39%3A5"
-    class="project-card reveal"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <div class="project-info">
-      <div class="project-index">01 / 04</div>
-
-      <div class="project-category">
-        Online Course · Learning
+  <!-- ============ PROJECTS ============ -->
+  <section class="projects" id="work">
+    <div class="wrap">
+      <div class="section-head reveal-up">
+        <span class="pill pill-yellow">Work</span>
+        <h2>PROJECT</h2>
+        <p>A collection of products, interfaces and experiences I've designed.</p>
       </div>
 
-      <h3>Sharp Cameo</h3>
-
-      <p class="project-desc">
-        Sharp Cameo is a modern fashion education platform empowering
-        the next generation of creative designers.
-      </p>
-
-      <div class="project-tags">
-        <span class="tag">UI/UX</span>
-        <span class="tag">Mobile App</span>
-        <span class="tag">Gamification</span>
-        <span class="tag">Figma</span>
-      </div>
-
-      <span class="project-link">
-        View Case Study <span class="arrow">→</span>
-      </span>
-    </div>
-
-    <div class="project-visual">
-      <img
-        src="./pics/sharp.jpeg"
-        alt="Sharp Cameo Project"
-        class="project-image"
-      >
-    </div>
-  </a>
-
-
-  <!-- PROJECT 02 -->
-  <a
-    href="https://www.figma.com/proto/bt6HGx99zwu1EMlMsHcQ84/Untitled?node-id=3-2167&t=2L8SPatSG4Wygw7K-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=3%3A3229"
-    class="project-card reveal"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <div class="project-info">
-      <div class="project-index">02 / 04</div>
-
-      <div class="project-category">
-        Travel · Booking Site
-      </div>
-
-      <h3>LV</h3>
-
-      <p class="project-desc">
-        LV is a modern and minimal travel booking site for next
-        generation of design.
-      </p>
-
-      <div class="project-tags">
-        <span class="tag">UI/UX</span>
-        <span class="tag">Web App</span>
-        <span class="tag">E-commerce</span>
-        <span class="tag">Figma</span>
-      </div>
-
-      <span class="project-link">
-        View Case Study <span class="arrow">→</span>
-      </span>
-    </div>
-
-    <div class="project-visual">
-      <img
-        src="./pics/lv.jpeg"
-        alt="LV Travel Project"
-        class="project-image"
-      >
-    </div>
-  </a>
-
-
-  <!-- PROJECT 03 -->
-  <a
-    href="https://www.figma.com/proto/wCdLmSRqFxpiBiHltmv8oL/Legasy?node-id=279-3559&t=0KTtQMLW10S1rx8S-1&scaling=min-zoom&content-scaling=fixed&page-id=6%3A327&starting-point-node-id=494%3A822"
-    class="project-card reveal"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <div class="project-info">
-      <div class="project-index">03 / 04</div>
-
-      <div class="project-category">
-        Travel · Booking Platform
-      </div>
-
-      <h3>Legacy Travel</h3>
-
-      <p class="project-desc">
-        A premium travel booking experience combining minimal design,
-        glassmorphism and intuitive navigation.
-      </p>
-
-      <div class="project-tags">
-        <span class="tag">UI/UX</span>
-        <span class="tag">Web Design</span>
-        <span class="tag">Booking</span>
-        <span class="tag">Figma</span>
-      </div>
-
-      <span class="project-link">
-        View Case Study <span class="arrow">→</span>
-      </span>
-    </div>
-
-    <div class="project-visual">
-      <img
-        src="./pics/legacy.jpeg"
-        alt="Legacy Travel Project"
-        class="project-image"
-      >
-    </div>
-  </a>
-
-
-  <!-- PROJECT 04 -->
-  <a
-    href="https://www.figma.com/proto/6INC16jeEGjpNR8NFCdYEC/KS?node-id=16-2&t=mJy5XnxTjbvHfeQG-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=16%3A2&show-proto-sidebar=1"
-    class="project-card reveal"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <div class="project-info">
-      <div class="project-index">04 / 04</div>
-
-      <div class="project-category">
-        E-commerce · Web Design
-      </div>
-
-      <h3>Khushi Creation</h3>
-
-      <p class="project-desc">
-        A clean and modern e-commerce interface designed around
-        product discovery and easy navigation.
-      </p>
-
-      <div class="project-tags">
-        <span class="tag">UI Design</span>
-        <span class="tag">UX</span>
-        <span class="tag">E-commerce</span>
-        <span class="tag">Figma</span>
-      </div>
-
-      <span class="project-link">
-        View Case Study <span class="arrow">→</span>
-      </span>
-    </div>
-
-    <div class="project-visual">
-      <img
-        src="./pics/khushi.jpeg"
-        alt="Khushi Creation Project"
-        class="project-image"
-      >
-    </div>
-  </a>
-
-</div>
-      
+      <div class="project-grid" id="projectGrid"><!-- injected by JS --></div>
     </div>
   </section>
 
-  <!-- ============ AI DESIGN WORKFLOW ============ -->
-  <section class="section" id="ai-workflow">
-    <div class="container">
-      <div class="section-head reveal">
-        <h2>Designing with AI, without losing the human touch.</h2>
-        <p class="sub">I use AI to accelerate exploration, research and iteration — while keeping UX decisions human-driven.</p>
+  <!-- ============ AI BANNER ============ -->
+  <section class="ai-banner">
+    <div class="wrap">
+      <div class="ai-banner-strip reveal-up">
+        <h2>DESIGNING WITH AI, WITHOUT LOSING THE HUMAN TOUCH.</h2>
       </div>
-
-      <div class="workflow-strip reveal">
-        <div class="workflow-step"><div class="workflow-node">01</div><span class="label">Research</span></div>
-        <div class="workflow-connector"></div>
-        <div class="workflow-step"><div class="workflow-node">02</div><span class="label">Ideation</span></div>
-        <div class="workflow-connector"></div>
-        <div class="workflow-step"><div class="workflow-node">03</div><span class="label">Wireframing</span></div>
-        <div class="workflow-connector"></div>
-        <div class="workflow-step is-ai"><div class="workflow-node">AI</div><span class="label">AI Exploration</span></div>
-        <div class="workflow-connector"></div>
-        <div class="workflow-step"><div class="workflow-node">04</div><span class="label">UI Design</span></div>
-        <div class="workflow-connector"></div>
-        <div class="workflow-step"><div class="workflow-node">05</div><span class="label">Prototype</span></div>
-        <div class="workflow-connector"></div>
-        <div class="workflow-step"><div class="workflow-node">06</div><span class="label">Iteration</span></div>
-      </div>
-
-      <div class="tool-grid">
-        <div class="tool-card reveal">
-          <div class="tool-icon">
-            <img src="./pics/figma.jpeg" alt="">
-          </div>
-          <h4>Figma</h4>
-          <p>UI Design · Prototyping · Design Systems</p>
-        </div>
-        <div class="tool-card reveal reveal-delay-1">
-          <div class="tool-icon">
-            <img src="./pics/claude.jpeg" alt="">
-          </div>
-          <h4>Cluade</h4>
-          <p>Visual Assets · Icons · Branding</p>
-        </div>
-        <div class="tool-card reveal reveal-delay-2">
-          <div class="tool-icon">
-            <img src="./pics/stitch.jpeg" alt="">
-          </div>
-          <h4>Stitch</h4>
-          <p>Rapid UI Exploration · Design Concepts</p>
-        </div>
-        <div class="tool-card reveal reveal-delay-3">
-          <div class="tool-icon">
-            <img src="./pics/chatgpt.jpeg" alt="">
-          </div>
-          <h4>ChatGPT</h4>
-          <p>Research · UX Ideas · Content · Problem Solving</p>
-        </div>
-        <div class="tool-card reveal reveal-delay-4">
-          <div class="tool-icon">
-            <img src="./pics/ai2.jpeg" alt="">
-          </div>
-          <h4>AI Tools</h4>
-          <p>Image Generation · Ideation · Rapid Exploration</p>
-        </div>
-      </div>
+      <div class="ai-steps" id="aiSteps"><!-- injected by JS --></div>
     </div>
   </section>
 
-  <!-- ============ SKILLS ============ -->
-  <section class="section" id="skills">
-    <div class="container">
-      <div class="section-head reveal">
-        <h2>What I Do</h2>
-        <p class="sub">A blend of research, visual craft and AI-accelerated workflows.</p>
-      </div>
+  <!-- ============ TOOLS ============ -->
+  <section class="tools">
+    <div class="wrap">
+      <h2 class="reveal-up">TOOLS</h2>
+      <span class="pill pill-dark reveal-up" style="--delay:.06s">No fluff. Just raw function.</span>
 
-      <div class="skills-grid">
-        <div class="skill-col reveal">
-          <div class="skill-num">01</div>
-          <h3>UX Design</h3>
-          <ul>
-            <li>User Research</li>
-            <li>User Flows</li>
-            <li>Wireframing</li>
-            <li>Information Architecture</li>
-            <li>Usability Thinking</li>
-          </ul>
-        </div>
-        <div class="skill-col reveal reveal-delay-1">
-          <div class="skill-num">02</div>
-          <h3>UI Design</h3>
-          <ul>
-            <li>Visual Design</li>
-            <li>Design Systems</li>
-            <li>Responsive Design</li>
-            <li>Typography</li>
-            <li>Color &amp; Layout</li>
-          </ul>
-        </div>
-        <div class="skill-col reveal reveal-delay-2">
-          <div class="skill-num">03</div>
-          <h3>AI-Assisted Design</h3>
-          <ul>
-            <li>AI Ideation</li>
-            <li>Rapid Exploration</li>
-            <li>AI Image Generation</li>
-            <li>Content Generation</li>
-            <li>Design Workflow Optimization</li>
-          </ul>
-        </div>
+      <div class="tools-grid" id="toolsGrid"><!-- injected by JS --></div>
+    </div>
+  </section>
+
+  <!-- ============ WHAT I DO ============ -->
+  <section class="whatido" id="whatido">
+    <div class="wrap">
+      <div class="section-head reveal-up">
+        <span class="pill pill-yellow-outline">Process</span>
+        <h2>WHAT I DO</h2>
       </div>
+      <div class="whatido-grid" id="whatidoGrid"><!-- injected by JS --></div>
     </div>
   </section>
 
   <!-- ============ DESIGN PROCESS ============ -->
-  <section class="section" id="process">
-    <div class="container">
-      <div class="section-head reveal">
-        <h2>Design Process</h2>
-        <p class="sub">Eight steps, one continuous loop from problem to polish.</p>
-      </div>
+  <section class="design-process" id="process">
+    <div class="dp-left reveal-up">
+      <h2>DESIGN<br>PROCESS</h2>
+      <p class="dp-note">Eight steps, one continuous loop from problem to polish.</p>
+      <a href="#contact" class="btn btn-yellow dp-arrow" aria-label="Scroll to contact">&rarr;</a>
+    </div>
+    <div class="dp-right">
+      <div class="dp-list" id="dpList"><!-- injected by JS --></div>
+    </div>
+  </section>
 
-      <div class="process-track">
-        <div class="process-step reveal">
-          <div class="process-dot">01</div>
-          <h4>Understand</h4>
-          <p>Frame the problem, audience and business goals.</p>
-        </div>
-        <div class="process-step reveal reveal-delay-1">
-          <div class="process-dot">02</div>
-          <h4>Research</h4>
-          <p>Study users, competitors and context.</p>
-        </div>
-        <div class="process-step reveal reveal-delay-2">
-          <div class="process-dot">03</div>
-          <h4>Define</h4>
-          <p>Turn insights into a clear design direction.</p>
-        </div>
-        <div class="process-step reveal reveal-delay-3">
-          <div class="process-dot">04</div>
-          <h4>Explore</h4>
-          <p>Rapid concepts, including AI-assisted exploration.</p>
-        </div>
-        <div class="process-step reveal reveal-delay-4">
-          <div class="process-dot">05</div>
-          <h4>Design</h4>
-          <p>Craft high-fidelity screens and systems.</p>
-        </div>
-        <div class="process-step reveal">
-          <div class="process-dot">06</div>
-          <h4>Prototype</h4>
-          <p>Build interactive flows that feel real.</p>
-        </div>
-        <div class="process-step reveal reveal-delay-1">
-          <div class="process-dot">07</div>
-          <h4>Test</h4>
-          <p>Validate with users and refine decisions.</p>
-        </div>
-        <div class="process-step reveal reveal-delay-2">
-          <div class="process-dot">08</div>
-          <h4>Improve</h4>
-          <p>Iterate based on feedback and data.</p>
+  <!-- ============ CONTACT / CTA ============ -->
+  <section class="cta-section" id="contact">
+    <div class="cta-glow" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="cta-card reveal-up">
+        <h2>LET'S CREATE SOMETHING MEANINGFUL.</h2>
+        <p class="cta-sub">Have a product idea, design challenge or opportunity? Let's talk.</p>
+        <div class="cta-actions">
+          <a href="mailto:sanketbagda000@gmail.com" class="btn btn-dark">E-Mail</a>
+          <a href="https://www.linkedin.com/in/sanket-bagda/" target="_blank" rel="noopener" class="btn btn-dark">LinkedIn</a>
+          <a href="https://wa.me/919913278593" target="_blank" rel="noopener" class="btn btn-dark">WhatsApp</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ CONTACT ============ -->
-  <section class="section" id="contact">
-    <div class="container">
-      <div class="contact-section reveal">
-        <div class="contact-glow"></div>
-        <h2>Let's create something meaningful.</h2>
-        <p class="sub">Have a product idea, design challenge or opportunity? Let's talk.</p>
-        <div class="contact-actions">
-        <a href="mailto:sanketbagda000@gmail.com" class="btn btn-primary magnetic" target="_blank">Email Me <span class="btn-arrow">↗</span></a>
-          <a href="https://www.linkedin.com/in/sanket-bagda/" target="_blank" rel="noopener" class="btn btn-ghost magnetic">LinkedIn <span class="btn-arrow">↗</span></a>
-        </div>
-      </div>
-    </div>
-  </section>
 </main>
 
 <!-- ============ FOOTER ============ -->
 <footer class="site-footer">
-  <div class="container">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <h3>SANKET BAGDA</h3>
-        <p>UI/UX Designer · AI-Assisted Designer</p>
-        <div class="footer-socials">
-          <a href="https://wa.me/919913278593" target="_blank" rel="noopener noreferrer" class="social-fab wa" aria-label="Chat on WhatsApp">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-              <path d="M12.004 2C6.478 2 2 6.477 2 12.002c0 1.936.55 3.808 1.591 5.428L2 22l4.696-1.55A9.955 9.955 0 0 0 12.004 22C17.53 22 22 17.523 22 12.002 22 6.477 17.53 2 12.004 2zm0 18.19c-1.72 0-3.402-.462-4.868-1.338l-.349-.206-3.005.992.998-2.998-.226-.359a8.163 8.163 0 0 1-1.303-4.279c0-4.517 3.66-8.19 8.153-8.19 4.492 0 8.153 3.673 8.153 8.19 0 4.518-3.66 8.188-8.153 8.188z"/>
-            </svg>
-          </a>
-          <a href="https://www.instagram.com/sanket_0320?igsh=MWp4NGpsZWdyY2Z4bw%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" class="social-fab ig" aria-label="Visit Instagram profile">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-              <rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/>
-              <circle cx="12" cy="12" r="4.6"/>
-              <circle cx="17.3" cy="6.7" r="1.15" fill="currentColor" stroke="none"/>
-            </svg>
-          </a>
-          <a href="mailto:sanketbagda000@gmail.com" class="social-fab gmail" aria-label="Send an email">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-              <rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/>
-              <path d="M3.5 6l8.5 7 8.5-7" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </a>
-          <a href="https://www.linkedin.com/in/sanket-bagda/" target="_blank" rel="noopener noreferrer" class="social-fab li" aria-label="Visit LinkedIn profile">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.24h4V23h-4V8.24zM8.5 8.24h3.83v2.01h.05c.53-1 1.84-2.06 3.79-2.06 4.05 0 4.8 2.67 4.8 6.14V23h-4v-6.75c0-1.61-.03-3.68-2.24-3.68-2.25 0-2.59 1.76-2.59 3.57V23h-4V8.24z"/>
-            </svg>
-          </a>
-        </div>
-      </div>
-      <div class="footer-links">
-        <div class="footer-col">
-           Menu
-          <ul>
-            <li><a href="#work">Work</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
-      </div>
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <span class="footer-script">Sanket<br>Bagda</span>
+      <span class="footer-copy">© 2026 Sanket Bagda</span>
+      <a href="tel:+919313645074" class="footer-phone">+91 93136 45074</a>
     </div>
-    <div class="footer-bottom">
-      <span>© 2026 Sanket Bagda. Designed &amp; built with curiosity.</span>
-      <span>Rajkot, Ahmedabad</span>
+    <div class="footer-socials">
+      <a href="https://www.instagram.com/sanket_0320/" target="_blank" rel="noopener" aria-label="Instagram" class="social-btn">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/sanket-bagda/" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-btn">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="4"/><line x1="7" y1="10" x2="7" y2="16"/><circle cx="7" cy="7" r="1"/><path d="M11 16v-6M11 10c0-1.5 1.2-2 2.5-2 1.5 0 2.5 1 2.5 3v5"/></svg>
+      </a>
+      <a href="https://wa.me/919913278593" target="_blank" rel="noopener" aria-label="WhatsApp" class="social-btn">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.87 9.87 0 0 0 4.74 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.8 14.02c-.24.68-1.4 1.32-1.93 1.4-.5.08-1.12.11-1.8-.11-.42-.13-.95-.3-1.64-.6-2.88-1.24-4.76-4.14-4.9-4.33-.14-.19-1.17-1.56-1.17-2.97 0-1.42.74-2.11 1-2.4.26-.29.57-.36.76-.36.19 0 .38 0 .55.01.18.01.41-.07.64.49.24.58.81 2 .88 2.14.07.15.12.32.02.51-.09.19-.14.31-.28.48-.14.16-.29.36-.42.49-.14.14-.28.29-.12.57.16.28.71 1.17 1.52 1.9 1.05.94 1.93 1.23 2.21 1.37.28.14.44.12.6-.07.16-.19.68-.79.87-1.06.19-.28.37-.23.62-.14.26.09 1.63.77 1.91.91.28.14.46.21.53.33.07.12.07.68-.17 1.35z"/></svg>
+      </a>
+      <a href="tel:+919313645074" aria-label="Phone" class="social-btn">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.68 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.32 1.85.55 2.81.68A2 2 0 0 1 22 16.92z"/></svg>
+      </a>
     </div>
   </div>
 </footer>
-  <script src="./script.js"></script>
+
+<script src="script.js"></script>
 </body>
 </html>
