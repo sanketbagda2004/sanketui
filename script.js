@@ -159,9 +159,10 @@ const dpSteps = [
    RENDER HELPERS
 ========================================================= */
 function renderProjects(){
-  const grid = document.getElementById('projectGrid');
-  grid.innerHTML = projects.map((p, i) => `
-    <article class="project-card reveal-up" style="--delay:${(i%2)*0.08}s">
+  const track = document.getElementById('projectTrack');
+  if(!track) return;
+  track.innerHTML = projects.map((p, i) => `
+    <article class="project-card-wide" style="--tilt:${(i%2===0 ? -1.3 : 1.3)}deg" data-index="${i}">
       <div class="project-thumb">
         <img src="${p.thumb}" alt="${p.title} preview" loading="lazy">
       </div>
@@ -175,6 +176,102 @@ function renderProjects(){
       </div>
     </article>
   `).join('');
+}
+
+/* =========================================================
+   PROJECT SCROLL CAROUSEL
+   Pins .project-scroll for the length of the horizontal
+   distance the track needs to travel, so vertical scroll
+   drives horizontal motion. Also supports drag/swipe.
+========================================================= */
+function initProjectScroll(){
+  const outer = document.getElementById('projectScroll');
+  const track = document.getElementById('projectTrack');
+  if(!outer || !track) return;
+
+  const cards = () => Array.from(track.children);
+  let maxTranslate = 0;
+  let ticking = false;
+  let dragging = false;
+  let dragStartX = 0;
+  let dragStartTranslate = 0;
+  let currentTranslate = 0;
+
+  function measure(){
+    maxTranslate = Math.max(0, track.scrollWidth - window.innerWidth);
+    outer.style.height = (window.innerHeight + maxTranslate) + 'px';
+    updateFromScroll();
+  }
+
+  function setTranslate(x){
+    currentTranslate = Math.min(0, Math.max(-maxTranslate, x));
+    track.style.transform = `translateX(${currentTranslate}px)`;
+    updateCardEmphasis();
+  }
+
+  function updateCardEmphasis(){
+    const center = window.innerWidth / 2;
+    cards().forEach(card => {
+      const rect = card.getBoundingClientRect();
+      const cardCenter = rect.left + rect.width / 2;
+      const dist = Math.abs(center - cardCenter);
+      const isActive = dist < rect.width * 0.6;
+      card.classList.toggle('is-active', isActive);
+    });
+  }
+
+  function updateFromScroll(){
+    if(dragging) return;
+    const rect = outer.getBoundingClientRect();
+    const scrollable = outer.offsetHeight - window.innerHeight;
+    const progress = scrollable > 0 ? Math.min(1, Math.max(0, -rect.top / scrollable)) : 0;
+    setTranslate(-progress * maxTranslate);
+  }
+
+  function onScroll(){
+    if(!ticking){
+      window.requestAnimationFrame(() => { updateFromScroll(); ticking = false; });
+      ticking = true;
+    }
+  }
+
+  function pointerX(e){ return e.touches ? e.touches[0].clientX : e.clientX; }
+
+  function startDrag(e){
+    dragging = true;
+    track.classList.add('is-dragging');
+    dragStartX = pointerX(e);
+    dragStartTranslate = currentTranslate;
+  }
+
+  function moveDrag(e){
+    if(!dragging) return;
+    const dx = pointerX(e) - dragStartX;
+    setTranslate(dragStartTranslate + dx);
+  }
+
+  function endDrag(){
+    if(!dragging) return;
+    dragging = false;
+    track.classList.remove('is-dragging');
+    const scrollable = outer.offsetHeight - window.innerHeight;
+    const progress = maxTranslate > 0 ? (-currentTranslate / maxTranslate) : 0;
+    const targetScroll = outer.offsetTop + progress * scrollable;
+    window.scrollTo({ top: targetScroll, behavior: 'auto' });
+  }
+
+  track.addEventListener('mousedown', startDrag);
+  track.addEventListener('touchstart', startDrag, { passive:true });
+  window.addEventListener('mousemove', moveDrag);
+  window.addEventListener('touchmove', moveDrag, { passive:true });
+  window.addEventListener('mouseup', endDrag);
+  window.addEventListener('touchend', endDrag);
+
+  window.addEventListener('scroll', onScroll, { passive:true });
+  window.addEventListener('resize', measure);
+  window.addEventListener('load', measure);
+
+  measure();
 }
 
 function renderAiSteps(){
@@ -298,6 +395,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderWhatido();
   renderDp();
 
+  initProjectScroll();
   initScrollReveal();
   initHeaderHide();
   initMobileNav();

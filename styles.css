@@ -338,6 +338,91 @@ h1,h2,h3,h4{font-family:var(--font-display);line-height:1.02;letter-spacing:-.01
 .visit-link:hover .arrow{ transform:translateX(5px); }
 
 /* =========================================================
+   PROJECT SCROLL CAROUSEL
+   Vertical scroll pins this section while the row of project
+   cards translates horizontally, T.Ricks-style. Also drag/swipe-
+   able for touch and mouse.
+========================================================= */
+.project-scroll{
+  position:relative;
+  margin-top:56px;
+}
+.project-scroll-sticky{
+  position:sticky;
+  top:0;
+  height:100vh;
+  display:flex;
+  align-items:center;
+  overflow:hidden;
+}
+.project-track{
+  display:flex;
+  align-items:flex-start;
+  gap:44px;
+  padding:0 6vw;
+  will-change:transform;
+  cursor:grab;
+  touch-action:pan-y;
+}
+.project-track.is-dragging{ cursor:grabbing; }
+
+.project-card-wide{
+  flex:0 0 auto;
+  width:min(74vw,520px);
+  border:var(--border-w) solid var(--black);
+  background:var(--cream);
+  box-shadow:8px 8px 0 var(--black);
+  display:flex;
+  flex-direction:column;
+  transform:scale(.94) rotate(var(--tilt,0deg));
+  opacity:.55;
+  transition:transform .25s var(--ease), opacity .25s var(--ease), box-shadow .25s var(--ease);
+}
+.project-card-wide.is-active{
+  transform:scale(1) rotate(0deg);
+  opacity:1;
+  box-shadow:12px 12px 0 var(--black);
+}
+.project-card-wide .project-thumb{
+  aspect-ratio:16/10.4;
+  overflow:hidden;
+  border-bottom:var(--border-w) solid var(--black);
+  background:#eee;
+  pointer-events:none;
+}
+.project-card-wide .project-thumb img{
+  width:100%; height:100%; object-fit:cover; display:block;
+  -webkit-user-drag:none; user-select:none;
+}
+.project-card-wide .project-body{
+  padding:24px 26px 28px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  flex:1;
+}
+.project-card-wide .project-body h3{ font-size:clamp(20px,2.2vw,25px); }
+.project-card-wide .project-body p{ font-weight:600; color:var(--gray-txt); font-size:14px; line-height:1.55; }
+
+.project-scroll-hint{
+  position:absolute;
+  left:6vw;
+  bottom:36px;
+  font-family:var(--font-display);
+  font-size:12.5px;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  color:var(--black);
+  opacity:.6;
+}
+
+@media (max-width:760px){
+  .project-scroll-sticky{ height:100svh; }
+  .project-card-wide{ width:80vw; }
+  .project-scroll-hint{ bottom:22px; font-size:11px; }
+}
+
+/* =========================================================
    AI BANNER
 ========================================================= */
 .ai-banner{ background:var(--yellow); padding:80px 0 90px; overflow:hidden; }
