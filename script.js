@@ -385,6 +385,18 @@ function initSmoothAnchors(){
   });
 }
 
+function initHeroLottie(){
+  const container = document.getElementById('heroLottie');
+  if(!container || typeof lottie === 'undefined' || typeof window.heroAnimationData === 'undefined') return;
+  lottie.loadAnimation({
+    container,
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    animationData: window.heroAnimationData
+  });
+}
+
 /* =========================================================
    INIT
 ========================================================= */
@@ -401,4 +413,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileNav();
   initCursor();
   initSmoothAnchors();
+  initHeroLottie();
 });
