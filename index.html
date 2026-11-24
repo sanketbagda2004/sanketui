@@ -3,246 +3,313 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="google-adsense-account" content="ca-pub-9948332833987555">
+<meta name="theme-color" content="#050505">
+<meta name="google-adsense-account" content="ca-pub-9948332833987555">
+<meta name="description" content="Sanket Bagda — UI/UX and Graphic Designer crafting simple, intuitive and memorable digital experiences.">
 <title>Sanket Bagda — UI/UX & Graphic Designer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,600&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
-
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
 <!-- Favicon -->
 <link rel="icon" type="image/x-icon" href="favicon.ico?v=2">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?v=2">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=2">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=2">
+<style>
+@import url('https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap');
+:root{--bg:#050505;--fg:#f4f3ef;--muted:#92928d;--line:rgba(255,255,255,.14);--green:#39ff14;--pad:clamp(22px,5vw,76px);--ease:cubic-bezier(.16,1,.3,1)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{background:var(--bg);color:var(--fg);font-family:'DM Sans',sans-serif;overflow-x:hidden;cursor:none}
+a,button{color:inherit}
+a{text-decoration:none}
+::selection{background:var(--green);color:#000}
+.noise{position:fixed;inset:0;pointer-events:none;z-index:20;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E")}
+.cursor-trail{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:1000}
+.cursor-dot{position:fixed;left:0;top:0;width:10px;height:10px;background:var(--green);border-radius:50%;pointer-events:none;z-index:1001;transform:translate(-50%,-50%) scale(1);box-shadow:0 0 18px 4px rgba(57,255,20,.65);transition:transform .3s var(--ease),background .3s,box-shadow .3s}
+.cursor-dot.hover{transform:translate(-50%,-50%) scale(2.6);background:rgba(57,255,20,.18);box-shadow:0 0 30px 8px rgba(57,255,20,.5)}
+.cursor-dot.down{transform:translate(-50%,-50%) scale(.6)}
+header{position:fixed;z-index:100;top:0;left:0;width:100%;padding:24px var(--pad);display:flex;align-items:center;justify-content:space-between;background:transparent}
+.brand{font:600 15px 'General Sans',sans-serif;letter-spacing:-.04em}.brand span{color:var(--green)}
+.nav{display:flex;gap:clamp(18px,3vw,42px);align-items:center}
+.nav a,.nav-cta{font:11px 'DM Mono',monospace;letter-spacing:.08em;text-transform:uppercase;color:#b8b8b2;transition:color .25s}
+.nav a:hover{color:var(--green)}
+.nav-cta{border:1px solid var(--line);border-radius:50px;padding:12px 17px;color:var(--fg)}
+.nav-cta:hover{background:var(--green);color:#000;border-color:var(--green)}
+.menu-btn{display:none;background:none;border:0;color:white;font-size:22px}
+.hero{min-height:100svh;position:relative;display:flex;flex-direction:column;justify-content:center;padding:140px var(--pad) 95px;overflow:hidden}
+.hero-bg{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+ .reference-flower-video{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:1;display:block;z-index:0}
+.hero-bg:before{content:"";position:absolute;width:75vw;height:75vw;max-width:1000px;max-height:1000px;right:-20vw;top:-34vw;background:radial-gradient(circle,rgba(57,255,20,.13),rgba(57,255,20,.035) 34%,transparent 68%);filter:blur(20px)}
+.hero-bg:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,5,5,.25) 0%,rgba(5,5,5,.1) 45%,rgba(5,5,5,.75) 100%)}
+@media(max-width:700px){.reference-flower-video{height:100%;object-position:center}}
+.hero-kicker,.eyebrow{font:11px 'DM Mono',monospace;letter-spacing:.18em;text-transform:uppercase;color:var(--green)}
+.hero-kicker{display:flex;align-items:center;gap:12px;margin-bottom:34px}
+.pulse{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 15px var(--green);animation:pulse 1.8s infinite}
+@keyframes pulse{50%{opacity:.35;box-shadow:0 0 4px var(--green)}}
+.hero h1{position:relative;z-index:1;font:500 clamp(58px,10.2vw,150px)/.91 'General Sans',sans-serif;letter-spacing:-.085em;max-width:1150px}
+.hero h1 .serif{font:italic 500 1em/.95 'Playfair Display',serif;letter-spacing:-.065em;color:#b8b8b1}
+.hero h1 .outline{color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.65)}
+.hero-bottom{position:relative;z-index:1;display:flex;justify-content:space-between;align-items:flex-end;margin-top:55px;gap:30px}
+.hero-copy{max-width:430px;color:#a4a49e;font-size:15px;line-height:1.8}
+.actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:22px;padding:16px 21px;border-radius:100px;border:1px solid var(--line);font:11px 'DM Mono',monospace;text-transform:uppercase;letter-spacing:.08em;transition:all .35s var(--ease)}
+.btn.primary{background:var(--green);color:#050505;border-color:var(--green)}
+.btn:hover{transform:translateY(-4px);border-color:var(--green)}
+.btn.secondary:hover{color:var(--green)}
+.btn .arrow{font-size:17px;line-height:10px}
+.hero-index{position:absolute;right:var(--pad);top:48%;writing-mode:vertical-rl;font:10px 'DM Mono',monospace;letter-spacing:.16em;color:#696963}
+.scroll-note{position:absolute;bottom:30px;left:var(--pad);display:flex;gap:12px;align-items:center;color:#777;font:10px 'DM Mono',monospace;letter-spacing:.14em;text-transform:uppercase}
+.scroll-note:before{content:"";width:38px;height:1px;background:var(--green)}
+.section{padding:130px var(--pad);position:relative}
+.section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:60px}
+.eyebrow{margin-bottom:20px}
+.section-title{font:500 clamp(42px,6vw,82px)/.98 'General Sans',sans-serif;letter-spacing:-.07em}
+.section-title em{font-family:'Playfair Display',serif;font-weight:500;color:#999;font-style:italic}
+.section-note{max-width:260px;color:var(--muted);font-size:13px;line-height:1.7}
+.work-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.work-card{min-height:350px;border:1px solid var(--line);border-radius:4px;position:relative;overflow:hidden;padding:26px;display:flex;flex-direction:column;justify-content:space-between;background:linear-gradient(145deg,#141414,#090909);transition:transform .5s var(--ease),border-color .3s}
+.work-card:nth-child(2n){background:linear-gradient(145deg,#111511,#090a09)}
+.work-card:hover{transform:translateY(-7px);border-color:rgba(57,255,20,.55)}
+.card-top{display:flex;justify-content:space-between;color:#888;font:10px 'DM Mono',monospace;letter-spacing:.12em;text-transform:uppercase}
+.card-art{position:absolute;inset:70px 12% 65px;display:grid;place-items:center;pointer-events:none}
+.ui-window{width:min(78%,390px);aspect-ratio:1.45;border:1px solid rgba(255,255,255,.18);border-radius:10px;background:linear-gradient(145deg,rgba(255,255,255,.09),rgba(255,255,255,.015));box-shadow:0 30px 80px #000;transform:rotate(-7deg);padding:16px;display:flex;gap:10px}
+.ui-side{width:23%;border-radius:5px;background:rgba(57,255,20,.16);border:1px solid rgba(57,255,20,.2)}
+.ui-main{flex:1;display:flex;flex-direction:column;gap:9px}
+.ui-line{height:7px;border-radius:9px;background:rgba(255,255,255,.18);width:75%}
+.ui-line.short{width:42%}.ui-blocks{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;flex:1}
+.ui-blocks i{border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.045);border-radius:5px}
+.orbit{width:210px;height:210px;border:1px solid rgba(57,255,20,.35);border-radius:50%;position:relative;box-shadow:0 0 70px rgba(57,255,20,.08),inset 0 0 50px rgba(57,255,20,.05)}
+.orbit:before,.orbit:after{content:"";position:absolute;border:1px solid rgba(255,255,255,.18);border-radius:50%;inset:25px -28px;transform:rotate(45deg)}
+.orbit:after{transform:rotate(-45deg)}
+.orbit-core{position:absolute;inset:70px;border-radius:50%;background:radial-gradient(circle,var(--green),rgba(57,255,20,.05) 70%);filter:blur(5px)}
+.type-art{font:500 clamp(44px,7vw,90px)/.9 'Playfair Display',serif;letter-spacing:-.07em;color:#d8d8d2;text-align:center}
+.type-art span{color:var(--green);font-style:italic}
+.card-bottom{position:relative;z-index:1;display:flex;justify-content:space-between;align-items:flex-end}
+.card-bottom h3{font:500 21px 'General Sans',sans-serif;letter-spacing:-.04em}
+.card-bottom p{font:10px 'DM Mono',monospace;color:#888;margin-top:7px;text-transform:uppercase;letter-spacing:.1em}
+.card-arrow{font-size:24px;color:var(--green)}
+.tools{border-top:1px solid var(--line);border-bottom:1px solid var(--line);display:grid;grid-template-columns:1fr 2fr;gap:40px;padding:38px 0}
+.tools-label{font:11px 'DM Mono',monospace;color:var(--green);letter-spacing:.14em;text-transform:uppercase}
+.tool-list{display:flex;flex-wrap:wrap;gap:12px}
+.tool-list span{border:1px solid var(--line);border-radius:50px;padding:12px 17px;color:#c5c5bf;font-size:12px}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:10vw;align-items:center}
+.about-copy{font-size:clamp(17px,2vw,23px);line-height:1.65;color:#b9b9b2;max-width:620px}
+.about-copy strong{color:#fff;font-weight:500}
+.about-copy p+p{margin-top:22px}
+.about-stamp{width:min(100%,420px);aspect-ratio:1;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;position:relative;margin:auto}
+.about-stamp:before,.about-stamp:after{content:"";position:absolute;border:1px solid rgba(57,255,20,.3);border-radius:50%;inset:12%}
+.about-stamp:after{inset:25%;border-color:rgba(255,255,255,.15)}
+.stamp-text{font:500 clamp(35px,6vw,70px)/.9 'General Sans',sans-serif;letter-spacing:-.09em;text-align:center;z-index:1}
+.stamp-text span{color:var(--green);font-family:'Playfair Display',serif;font-style:italic}
+.stamp-caption{position:absolute;bottom:13%;font:9px 'DM Mono',monospace;letter-spacing:.2em;color:#777}
+.process-list{border-top:1px solid var(--line)}
+.process-row{display:grid;grid-template-columns:80px 1fr 1fr;gap:25px;align-items:center;padding:25px 5px;border-bottom:1px solid var(--line);transition:padding .3s var(--ease)}
+.process-row:hover{padding-left:18px}
+.process-num{font:11px 'DM Mono',monospace;color:var(--green)}
+.process-row h3{font:500 clamp(20px,2.5vw,30px) 'General Sans',sans-serif;letter-spacing:-.04em}
+.process-row p{font-size:13px;line-height:1.6;color:var(--muted);max-width:370px}
+.contact{padding-bottom:55px}
+.contact-panel{border:1px solid var(--line);padding:clamp(35px,7vw,90px);position:relative;overflow:hidden;background:radial-gradient(ellipse at 90% 100%,rgba(57,255,20,.1),transparent 45%),#090909}
+.contact-panel h2{font:500 clamp(48px,9vw,120px)/.9 'General Sans',sans-serif;letter-spacing:-.085em;max-width:900px}
+.contact-panel h2 em{font-family:'Playfair Display',serif;color:#aaa;font-weight:500}
+.contact-bottom{display:flex;justify-content:space-between;align-items:flex-end;margin-top:55px;gap:25px}
+.contact-bottom p{font-size:14px;color:#999;max-width:300px;line-height:1.7}
+.contact-mail{font:12px 'DM Mono',monospace;color:var(--green);border-bottom:1px solid rgba(57,255,20,.5);padding-bottom:8px}
+footer{padding:25px var(--pad) 30px;display:flex;justify-content:space-between;align-items:center;gap:20px;color:#777;font:10px 'DM Mono',monospace;letter-spacing:.08em;text-transform:uppercase}
+.footer-social{display:flex;gap:22px}.footer-social a:hover{color:var(--green)}
+.big-wordmark{overflow:hidden;padding:0 var(--pad) 5px;font:500 clamp(17vw,21.5vw,330px)/.76 'General Sans',sans-serif;letter-spacing:-.105em;white-space:nowrap;text-align:center;color:#efeee9;pointer-events:none}
+.big-wordmark span{display:inline-block;animation:letterIn 1s var(--ease) both;animation-delay:calc(var(--i)*.07s)}
+@keyframes letterIn{from{opacity:0;transform:translateX(-70px);filter:blur(15px)}to{opacity:1;transform:translateX(0);filter:blur(0)}}
+.reveal{opacity:0;transform:translateY(35px);filter:blur(8px);transition:opacity .9s var(--ease),transform .9s var(--ease),filter .9s var(--ease)}
+.reveal.visible{opacity:1;transform:none;filter:blur(0)}
+.hero .reveal{opacity:1;filter:none;transform:none}
+@media(max-width:760px){
+ body{cursor:auto}.cursor-trail,.cursor-dot{display:none}
+ header{padding:19px 22px}.nav{display:none;position:absolute;top:65px;left:15px;right:15px;padding:22px;background:#101010;border:1px solid var(--line);flex-direction:column;align-items:flex-start}.nav.open{display:flex}.menu-btn{display:block}
+ .hero{padding-top:135px;min-height:850px;min-height:100svh}.hero h1{font-size:clamp(58px,15vw,100px)}.hero-bottom{align-items:flex-start;flex-direction:column;margin-top:38px}.hero-index{display:none}
+ .section{padding:90px 22px}.section-head{align-items:flex-start;flex-direction:column;margin-bottom:38px}.section-note{max-width:400px}
+ .work-grid{grid-template-columns:1fr}.work-card{min-height:310px}.tools{grid-template-columns:1fr;gap:20px}
+ .about-grid{grid-template-columns:1fr;gap:50px}.about-stamp{width:min(78vw,340px);grid-row:1}
+ .process-row{grid-template-columns:38px 1fr;gap:12px}.process-row p{grid-column:2}
+ .contact-bottom{align-items:flex-start;flex-direction:column}.big-wordmark{font-size:20vw;padding-bottom:12px}
+ footer{flex-wrap:wrap}.footer-social{width:100%;order:3}
+}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+/* ===== merged from original site ===== */
+.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;padding:34px var(--pad);border-bottom:1px solid var(--line)}
+.stat-item{display:flex;flex-direction:column;gap:10px}
+.stat-eyebrow{font:10px 'DM Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:var(--green)}
+.stat-value{font:500 clamp(24px,3.2vw,44px)/1 'General Sans',sans-serif;letter-spacing:-.05em;text-transform:capitalize}
+.stat-rule{height:1px;background:var(--line)}
+.about-photo{width:min(100%,420px);aspect-ratio:1;margin:auto;border-radius:50%;padding:10px;border:1px solid var(--line);position:relative}
+.about-photo:before{content:"";position:absolute;inset:-14px;border-radius:50%;border:1px solid rgba(57,255,20,.3)}
+.about-photo img{width:100%;height:100%;object-fit:cover;border-radius:50%;display:block}
+.ai-banner{padding:100px var(--pad);border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:radial-gradient(ellipse at 10% 0%,rgba(57,255,20,.1),transparent 50%),#080808}
+.ai-banner h2{font:500 clamp(34px,6vw,84px)/.98 'General Sans',sans-serif;letter-spacing:-.07em;max-width:1100px}
+.ai-banner h2 em{font-family:'Playfair Display',serif;color:#aaa;font-weight:500}
+.process-intro{margin-top:18px}
+.contact-sub{margin-top:26px;color:#999;font-size:15px;line-height:1.7;max-width:480px}
+.contact-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:40px}
+.footer-brand{display:flex;flex-direction:column;gap:6px}
+.footer-phone:hover{color:var(--green)}
+@media(max-width:760px){.stats-bar{grid-template-columns:repeat(2,1fr);padding:28px 22px}.ai-banner{padding:70px 22px}}
+
+/* hero additions from original */
+.hero-name{position:relative;z-index:1;display:flex;flex-direction:column;gap:6px;margin-bottom:26px}
+.hero-name-main{font:600 clamp(18px,2.2vw,30px)/1 'General Sans',sans-serif;letter-spacing:-.02em}
+.hero-name-role{font:11px 'DM Mono',monospace;letter-spacing:.2em;color:var(--green)}
+.hero-card{position:relative;max-width:480px;padding:28px 28px 26px;border:1px solid var(--line);border-radius:14px;background:rgba(8,8,8,.55);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);display:flex;flex-direction:column;gap:24px}
+.hero-card-accent{position:absolute;left:0;top:22px;bottom:22px;width:3px;border-radius:3px;background:var(--green);box-shadow:0 0 14px var(--green)}
+.hero-card-badge{position:absolute;right:-14px;top:-14px;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:var(--green);color:#000;font-size:17px}
+@media(max-width:760px){.hero-card{max-width:100%}}
+</style>
 </head>
 <body>
-
-<!-- CUSTOM CURSOR DOT -->
-<div class="cursor-dot" id="cursorDot"></div>
-
-<!-- ============ HEADER ============ -->
-<header class="site-header" id="siteHeader">
-  <div class="wrap header-inner">
-    <a href="#top" class="logo">
-      <span class="logo-badge">S</span>
-      <span class="logo-text">-SANKET</span>
-    </a>
-
-    <nav class="main-nav" id="mainNav">
-      <a href="#work">Work</a>
-      <a href="#skills">Skills</a>
-      <a href="#process">Process</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
-
-    <a href="#contact" class="btn btn-coral btn-small header-cta">Let's Talk</a>
-
-    <button class="burger" id="burgerBtn" aria-label="Toggle menu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-
-  <!-- mobile nav -->
-  <div class="mobile-nav" id="mobileNav">
-    <a href="#work">Work</a>
-    <a href="#skills">Skills</a>
-    <a href="#process">Process</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-    <a href="#contact" class="btn btn-coral btn-small">Let's Talk</a>
-  </div>
+<div class="noise"></div>
+<canvas class="cursor-trail"></canvas><div class="cursor-dot"></div>
+<header>
+  <a class="brand" href="#top">S<span>.</span> SANKET</a>
+  <nav class="nav" id="nav">
+    <a href="#work">Work</a><a href="#skills">Skills</a><a href="#process">Process</a><a href="#about">About</a>
+    <a class="nav-cta" href="#contact">Let's Talk ↗</a>
+  </nav>
+  <button class="menu-btn" aria-label="Open navigation" id="menuBtn">☰</button>
 </header>
 
 <main id="top">
-
-  <!-- ============ HERO ============ -->
-  <section class="hero">
-    <div class="wrap hero-wrap">
-
-      <div class="hero-heading reveal-up">
-        <div class="hero-line hero-line--name">
-          <span>SANKET BAGDA</span>
-        </div>
-        <div class="hero-line hero-line--role">
-          <span>UI/UX &amp;<br>GRAPHIC DESIGNER</span>
-        </div>
-      </div>
-
-      <div class="hero-shapes" aria-hidden="true">
-        <div class="shape shape-circle float-anim"></div>
-        <div class="shape shape-diamond spin-anim"></div>
-        <div class="shape shape-star spin-anim-rev"></div>
-      </div>
-
-      <div class="hero-card reveal-up" style="--delay:.15s">
-        <div class="hero-card-accent"></div>
-        <p>UI/UX Designer crafting digital experiences that feel simple, intuitive &amp; memorable — with Figma, AI tools and modern design workflows.</p>
-        <div class="hero-card-actions">
-          <a href="#work" class="btn btn-coral">See Work</a>
-          <a href="#contact" class="btn btn-outline">&rarr; Let's Talk</a>
-        </div>
-        <div class="hero-card-badge" aria-hidden="true">★</div>
-      </div>
-
-      <div class="hero-lottie" id="heroLottie" aria-hidden="true"></div>
-
-    </div>
-  </section>
-
-  <!-- ============ STATS BAR ============ -->
-  <section class="stats-bar" id="skills">
-    <div class="wrap stats-grid">
-      <div class="stat-item reveal-up">
-        <span class="stat-eyebrow">Projects</span>
-        <span class="stat-value">6+</span>
-        <span class="stat-rule"></span>
-      </div>
-      <div class="stat-item reveal-up" style="--delay:.08s">
-        <span class="stat-eyebrow">Tool</span>
-        <span class="stat-value">figma</span>
-        <span class="stat-rule"></span>
-      </div>
-      <div class="stat-item reveal-up" style="--delay:.16s">
-        <span class="stat-eyebrow">Focus</span>
-        <span class="stat-value">Ui Design</span>
-        <span class="stat-rule"></span>
-      </div>
-      <div class="stat-item reveal-up" style="--delay:.24s">
-        <span class="stat-eyebrow">Craft</span>
-        <span class="stat-value">Graphics</span>
-        <span class="stat-rule"></span>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ ABOUT ME ============ -->
-  <section class="about" id="about">
-    <div class="about-watermark" aria-hidden="true">DETAIL</div>
-    <div class="wrap about-wrap reveal-up">
-      <div class="about-card">
-        <div class="about-text">
-          <span class="pill pill-dark">#ME</span>
-          <h2>SANKET BAGDA</h2>
-          <p>I'm Sanket Bagda, a UI/UX Designer who enjoys turning complex ideas into simple and engaging digital experiences. I combine design thinking, visual design and AI-powered tools to explore ideas faster and create better products.</p>
-          <p>I have completed my UI/UX and Graphic Course in Arena Animation and also 3 month internship at Qrolic Technology.</p>
-        </div>
-        <div class="about-photo">
-          <div class="about-photo-frame">
-            <img src="profile.jpg" alt="Portrait of Sanket Bagda">
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ PROJECTS ============ -->
-  <section class="projects" id="work">
-    <div class="wrap">
-      <div class="section-head reveal-up">
-        <span class="pill pill-yellow">Work</span>
-        <h2>PROJECT</h2>
-        <p>A collection of products, interfaces and experiences I've designed.</p>
-      </div>
-    </div>
-
-    <div class="project-scroll" id="projectScroll">
-      <div class="project-scroll-sticky">
-        <div class="project-track" id="projectTrack"><!-- injected by JS --></div>
-        <span class="project-scroll-hint">Scroll or drag &rarr;</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ AI BANNER ============ -->
-  <section class="ai-banner">
-    <div class="wrap">
-      <div class="ai-banner-strip reveal-up">
-        <h2>DESIGNING WITH AI, WITHOUT LOSING THE HUMAN TOUCH.</h2>
-      </div>
-      <div class="ai-steps" id="aiSteps"><!-- injected by JS --></div>
-    </div>
-  </section>
-
-  <!-- ============ TOOLS ============ -->
-  <section class="tools">
-    <div class="wrap">
-      <h2 class="reveal-up">TOOLS</h2>
-      <span class="pill pill-dark reveal-up" style="--delay:.06s">No fluff. Just raw function.</span>
-
-      <div class="tools-grid" id="toolsGrid"><!-- injected by JS --></div>
-    </div>
-  </section>
-
-  <!-- ============ WHAT I DO ============ -->
-  <section class="whatido" id="whatido">
-    <div class="wrap">
-      <div class="section-head reveal-up">
-        <span class="pill pill-yellow-outline">Process</span>
-        <h2>WHAT I DO</h2>
-      </div>
-      <div class="whatido-grid" id="whatidoGrid"><!-- injected by JS --></div>
-    </div>
-  </section>
-
-  <!-- ============ DESIGN PROCESS ============ -->
-  <section class="design-process" id="process">
-    <div class="dp-left reveal-up">
-      <h2>DESIGN<br>PROCESS</h2>
-      <p class="dp-note">Eight steps, one continuous loop from problem to polish.</p>
-      <a href="#contact" class="btn btn-yellow dp-arrow" aria-label="Scroll to contact">&rarr;</a>
-    </div>
-    <div class="dp-right">
-      <div class="dp-list" id="dpList"><!-- injected by JS --></div>
-    </div>
-  </section>
-
-  <!-- ============ CONTACT / CTA ============ -->
-  <section class="cta-section" id="contact">
-    <div class="cta-glow" aria-hidden="true"></div>
-    <div class="wrap">
-      <div class="cta-card reveal-up">
-        <h2>LET'S CREATE SOMETHING MEANINGFUL.</h2>
-        <p class="cta-sub">Have a product idea, design challenge or opportunity? Let's talk.</p>
-        <div class="cta-actions">
-          <a href="mailto:sanketbagda000@gmail.com" class="btn btn-dark">E-Mail</a>
-          <a href="https://www.linkedin.com/in/sanket-bagda/" target="_blank" rel="noopener" class="btn btn-dark">LinkedIn</a>
-          <a href="https://wa.me/919913278593" target="_blank" rel="noopener" class="btn btn-dark">WhatsApp</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<!-- ============ FOOTER ============ -->
-<footer class="site-footer">
-  <div class="wrap footer-inner">
-    <div class="footer-brand">
-      <span class="footer-script">Sanket<br>Bagda</span>
-      <span class="footer-copy">© 2026 Sanket Bagda</span>
-      <a href="tel:+919313645074" class="footer-phone">+91 93136 45074</a>
-    </div>
-    <div class="footer-socials">
-      <a href="https://www.instagram.com/sanket_0320/" target="_blank" rel="noopener" aria-label="Instagram" class="social-btn">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
-      </a>
-      <a href="https://www.linkedin.com/in/sanket-bagda/" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-btn">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="4"/><line x1="7" y1="10" x2="7" y2="16"/><circle cx="7" cy="7" r="1"/><path d="M11 16v-6M11 10c0-1.5 1.2-2 2.5-2 1.5 0 2.5 1 2.5 3v5"/></svg>
-      </a>
-      <a href="https://wa.me/919913278593" target="_blank" rel="noopener" aria-label="WhatsApp" class="social-btn">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.87 9.87 0 0 0 4.74 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.8 14.02c-.24.68-1.4 1.32-1.93 1.4-.5.08-1.12.11-1.8-.11-.42-.13-.95-.3-1.64-.6-2.88-1.24-4.76-4.14-4.9-4.33-.14-.19-1.17-1.56-1.17-2.97 0-1.42.74-2.11 1-2.4.26-.29.57-.36.76-.36.19 0 .38 0 .55.01.18.01.41-.07.64.49.24.58.81 2 .88 2.14.07.15.12.32.02.51-.09.19-.14.31-.28.48-.14.16-.29.36-.42.49-.14.14-.28.29-.12.57.16.28.71 1.17 1.52 1.9 1.05.94 1.93 1.23 2.21 1.37.28.14.44.12.6-.07.16-.19.68-.79.87-1.06.19-.28.37-.23.62-.14.26.09 1.63.77 1.91.91.28.14.46.21.53.33.07.12.07.68-.17 1.35z"/></svg>
-      </a>
-      <a href="tel:+919313645074" aria-label="Phone" class="social-btn">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.68 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.32 1.85.55 2.81.68A2 2 0 0 1 22 16.92z"/></svg>
-      </a>
+<section class="hero">
+  <div class="hero-bg">
+    <video class="reference-flower-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+      <source src="https://api.getlayers.ai/storage/v1/object/public/public/assets/loopstack-f8c64439bf/flower.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="hero-kicker"><span class="pulse"></span> Available for opportunities</div>
+  <div class="hero-name">
+    <span class="hero-name-main">SANKET BAGDA</span>
+    <span class="hero-name-role">UI/UX &amp; GRAPHIC DESIGNER</span>
+  </div>
+  <h1><span class="reveal">Ideas into</span><br><span class="serif reveal">intuitive</span> <span class="outline reveal">experiences.</span></h1>
+  <div class="hero-bottom">
+    <div class="hero-card">
+    <div class="hero-card-accent"></div>
+    <div class="hero-card-badge" aria-hidden="true">★</div>
+    <p class="hero-copy">UI/UX Designer crafting digital experiences that feel simple, intuitive &amp; memorable — with Figma, AI tools and modern design workflows.</p>
+    <div class="actions"><a class="btn primary" href="#work">See Work <span class="arrow">↗</span></a><a class="btn secondary" href="#contact">&rarr; Let's Talk</a></div>
     </div>
   </div>
+  <div class="hero-index">PORTFOLIO / 2026</div>
+  <div class="scroll-note">Scroll to explore</div>
+</section>
+
+<section class="stats-bar reveal">
+  <div class="stat-item"><span class="stat-eyebrow">Projects</span><span class="stat-value">6+</span><span class="stat-rule"></span></div>
+  <div class="stat-item"><span class="stat-eyebrow">Tool</span><span class="stat-value">Figma</span><span class="stat-rule"></span></div>
+  <div class="stat-item"><span class="stat-eyebrow">Focus</span><span class="stat-value">UI Design</span><span class="stat-rule"></span></div>
+  <div class="stat-item"><span class="stat-eyebrow">Craft</span><span class="stat-value">Graphics</span><span class="stat-rule"></span></div>
+</section>
+
+<section class="section" id="work">
+  <div class="section-head reveal">
+    <div><div class="eyebrow">01 / Selected work</div><h2 class="section-title">Project</h2></div>
+    <p class="section-note">A collection of products, interfaces and experiences I've designed.</p>
+  </div>
+  <div class="work-grid">
+    <a class="work-card reveal" href="#contact"><div class="card-top"><span>01 / UI design</span><span>↗</span></div><div class="card-art"><div class="ui-window"><div class="ui-side"></div><div class="ui-main"><i class="ui-line"></i><i class="ui-line short"></i><div class="ui-blocks"><i></i><i></i><i></i><i></i></div></div></div></div><div class="card-bottom"><div><h3>Digital experiences</h3><p>Interface · Interaction</p></div><span class="card-arrow">↗</span></div></a>
+    <a class="work-card reveal" href="#contact"><div class="card-top"><span>02 / Visual systems</span><span>↗</span></div><div class="card-art"><div class="orbit"><div class="orbit-core"></div></div></div><div class="card-bottom"><div><h3>Visual direction</h3><p>Identity · Visual design</p></div><span class="card-arrow">↗</span></div></a>
+    <a class="work-card reveal" href="#contact"><div class="card-top"><span>03 / Product thinking</span><span>↗</span></div><div class="card-art"><div class="type-art">Less,<br><span>but</span> better.</div></div><div class="card-bottom"><div><h3>Product interfaces</h3><p>UX · Product design</p></div><span class="card-arrow">↗</span></div></a>
+    <a class="work-card reveal" href="#contact"><div class="card-top"><span>04 / Creative tools</span><span>↗</span></div><div class="card-art"><div class="ui-window" style="transform:rotate(7deg);width:min(82%,420px);aspect-ratio:1.65"><div class="ui-main"><i class="ui-line short"></i><i class="ui-line"></i><div class="ui-blocks"><i></i><i></i><i></i><i></i></div></div><div class="ui-side" style="background:rgba(255,255,255,.08)"></div></div></div><div class="card-bottom"><div><h3>Graphic explorations</h3><p>Graphics · Composition</p></div><span class="card-arrow">↗</span></div></a>
+  </div>
+</section>
+
+<section class="ai-banner">
+  <h2 class="reveal">Designing with AI, without losing the <em>human touch.</em></h2>
+</section>
+
+<section class="section" id="skills">
+  <div class="section-head reveal"><div><div class="eyebrow">02 / Toolkit</div><h2 class="section-title">Tools</h2></div><p class="section-note">No fluff. Just raw function.</p></div>
+  <div class="tools reveal"><div class="tools-label">Design toolkit</div><div class="tool-list"><span>Figma</span><span>UI Design</span><span>UX Thinking</span><span>Graphic Design</span><span>AI Tools</span><span>Prototyping</span><span>Visual Design</span></div></div>
+</section>
+
+<section class="section" id="about">
+  <div class="section-head reveal"><div><div class="eyebrow">03 / #Me</div><h2 class="section-title">Sanket <em>Bagda.</em></h2></div></div>
+  <div class="about-grid">
+    <div class="about-copy reveal"><p>I'm <strong>Sanket Bagda</strong>, a UI/UX Designer who enjoys turning complex ideas into simple and engaging digital experiences. I combine design thinking, visual design and AI-powered tools to explore ideas faster and create better products.</p><p>I have completed my UI/UX and Graphic Course in <strong>Arena Animation</strong> and also 3 month internship at <strong>Qrolic Technology</strong>.</p></div>
+    <div class="about-photo reveal"><img src="profile.jpg" alt="Portrait of Sanket Bagda"></div>
+  </div>
+</section>
+
+<section class="section" id="process">
+  <div class="section-head reveal"><div><div class="eyebrow">04 / How I work</div><h2 class="section-title">From thought<br>to <em>thing.</em></h2></div><p class="section-note">Eight steps, one continuous loop from problem to polish.</p></div>
+  <div class="process-list">
+    <div class="process-row reveal"><span class="process-num">01</span><h3>Discover</h3><p>Understand the brief, audience and the real problem worth solving.</p></div>
+    <div class="process-row reveal"><span class="process-num">02</span><h3>Define</h3><p>Bring clarity to goals, priorities and the experience direction.</p></div>
+    <div class="process-row reveal"><span class="process-num">03</span><h3>Explore</h3><p>Generate ideas and explore different creative possibilities.</p></div>
+    <div class="process-row reveal"><span class="process-num">04</span><h3>Structure</h3><p>Shape the information and map a clear user journey.</p></div>
+    <div class="process-row reveal"><span class="process-num">05</span><h3>Wireframe</h3><p>Build the foundation before adding visual details.</p></div>
+    <div class="process-row reveal"><span class="process-num">06</span><h3>Design</h3><p>Create a consistent visual language and meaningful interactions.</p></div>
+    <div class="process-row reveal"><span class="process-num">07</span><h3>Prototype</h3><p>Connect the screens and bring the experience to life.</p></div>
+    <div class="process-row reveal"><span class="process-num">08</span><h3>Refine</h3><p>Review, improve and polish every detail that makes a difference.</p></div>
+  </div>
+</section>
+
+<section class="section contact" id="contact">
+  <div class="contact-panel reveal">
+    <div class="eyebrow">05 / Get in touch</div>
+    <h2>Let's create<br>something <em>meaningful.</em></h2>
+    <p class="contact-sub">Have a product idea, design challenge or opportunity? Let's talk.</p>
+    <div class="contact-actions">
+      <a class="btn primary" href="mailto:sanketbagda000@gmail.com">E-Mail <span class="arrow">↗</span></a>
+      <a class="btn secondary" href="https://www.linkedin.com/in/sanket-bagda/" target="_blank" rel="noopener">LinkedIn <span class="arrow">↗</span></a>
+      <a class="btn secondary" href="https://wa.me/919913278593" target="_blank" rel="noopener">WhatsApp <span class="arrow">↗</span></a>
+    </div>
+  </div>
+</section>
+</main>
+<div class="big-wordmark" aria-label="Sanket">SANKET</div>
+<footer>
+  <div class="footer-brand"><span>© 2026 Sanket Bagda</span><a class="footer-phone" href="tel:+919313645074">+91 93136 45074</a></div>
+  <div class="footer-social">
+    <a href="https://www.instagram.com/sanket_0320/" target="_blank" rel="noopener">Instagram ↗</a>
+    <a href="https://www.linkedin.com/in/sanket-bagda/" target="_blank" rel="noopener">LinkedIn ↗</a>
+    <a href="https://wa.me/919913278593" target="_blank" rel="noopener">WhatsApp ↗</a>
+    <a href="tel:+919313645074">Phone ↗</a>
+  </div>
+  <span>Designed with intention.</span>
 </footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"></script>
-<script src="hero-animation-data.js"></script>
-<script src="script.js"></script>
+<script>
+const menuBtn=document.getElementById('menuBtn'),nav=document.getElementById('nav');
+menuBtn.addEventListener('click',()=>nav.classList.toggle('open'));
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+const wordmark=document.querySelector('.big-wordmark');
+wordmark.innerHTML=[...wordmark.textContent].map((c,i)=>`<span style="--i:${i}">${c}</span>`).join('');
+if(matchMedia('(pointer:fine)').matches){
+ const cv=document.querySelector('.cursor-trail'),ctx=cv.getContext('2d'),dot=document.querySelector('.cursor-dot');
+ const resize=()=>{const d=devicePixelRatio||1;cv.width=innerWidth*d;cv.height=innerHeight*d;ctx.setTransform(d,0,0,d,0,0)};
+ resize();addEventListener('resize',resize);
+ let x=innerWidth/2,y=innerHeight/2;const pts=[];const MAX=28;
+ addEventListener('mousemove',e=>{x=e.clientX;y=e.clientY;dot.style.left=x+'px';dot.style.top=y+'px'});
+ addEventListener('mousedown',()=>dot.classList.add('down'));
+ addEventListener('mouseup',()=>dot.classList.remove('down'));
+ document.addEventListener('mouseover',e=>{if(e.target.closest('a,button'))dot.classList.add('hover')});
+ document.addEventListener('mouseout',e=>{if(e.target.closest('a,button'))dot.classList.remove('hover')});
+ const draw=()=>{
+  pts.push({x,y});if(pts.length>MAX)pts.shift();
+  ctx.clearRect(0,0,innerWidth,innerHeight);
+  ctx.lineCap='round';ctx.lineJoin='round';
+  for(let k=1;k<pts.length;k++){
+   const t=k/pts.length;
+   ctx.beginPath();ctx.moveTo(pts[k-1].x,pts[k-1].y);ctx.lineTo(pts[k].x,pts[k].y);
+   ctx.strokeStyle='rgba(57,255,20,'+(t*.7)+')';ctx.lineWidth=t*6;
+   ctx.shadowColor='rgba(57,255,20,.8)';ctx.shadowBlur=12*t;ctx.stroke();
+  }
+  requestAnimationFrame(draw)};
+ draw();
+}
+</script>
 </body>
 </html>

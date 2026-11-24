@@ -309,7 +309,7 @@ h1,h2,h3,h4{font-family:var(--font-display);line-height:1.02;letter-spacing:-.01
   overflow:hidden;
   max-height:560px;
 }
-.about-photo-frame img, .about-photo-frame svg{ width:100%; height:100%; object-fit:contain; object-position:center bottom; background:var(--purple); display:block; transition:transform .6s var(--ease); }
+.about-photo-frame img, .about-photo-frame svg{ width:100%; height:100%; object-fit:cover; object-position:center top; background:var(--purple); display:block; transition:transform .6s var(--ease); }
 .about-card:hover .about-photo-frame img, .about-card:hover .about-photo-frame svg{ transform:scale(1.04); }
 
 /* =========================================================
